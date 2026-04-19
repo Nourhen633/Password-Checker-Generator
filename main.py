@@ -2,7 +2,7 @@
 Author: Nourhen Abid
 Description : 
 Python program that evaluates password strength and generates secure passwords.
-Includes pattern detection, uppercase/symbol checks, and a menu interface."""
+Includes pattern detection, uppercase/symbol checks, entropy calculation and a menu interface."""
 import P1
 #class main is for the creation of the interface 
 class main:
