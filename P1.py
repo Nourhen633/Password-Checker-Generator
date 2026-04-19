@@ -2,14 +2,14 @@
 Author: Nourhen Abid
 Description : 
 Python program that evaluates password strength and generates secure passwords.
-Includes pattern detection, uppercase/symbol checks, and a menu interface."""
+Includes pattern detection, uppercase/symbol checks, entropy calculation and a menu interface."""
 import random 
 import string
 import math
 """The User class contains the Password validation logic.
 It checks wether the user´s password contains weak sequences like "aaa" or "123" 
 wether it includes Uppercases and symbols
-and its length to get its grade of strength """
+its entropy and length to get its grade of strength """
 class User:
     #checkRepitition makes sure that there are no weak patterns in the password
     def checkRepetition(password):
@@ -21,6 +21,8 @@ class User:
             if ch1==ch2==ch3 or (ch1.isdigit() and ch2.isdigit() and ch3.isdigit() and int(ch1)+1==int(ch2) and int(ch2)+1==int(ch3)):
                 a="weak" 
         return a 
+
+    
     #this method checks the presence of at least one uppercase and one Symbol   
     def includesUppercaseAndSymbol(password):
         hasUppercase: bool= False
@@ -30,9 +32,9 @@ class User:
             ch= password[i]
             if "A"<=ch<="Z": hasUppercase=True
             if ch in symbols: hasSymbol=True
-        return hasSymbol and hasUppercase 
-    # this method checks the length of the password   
+        return hasSymbol and hasUppercase    
 
+    
     def calculateEntropy (password):
         #s is the character_set_size
         s=0
@@ -56,6 +58,8 @@ class User:
            return "strong Password : make it shorter!"
         else:
            return "medium Password!" 
+
+
 """The class Computer generates a strong password that has :
 at least one Uppercase and symbol
 with a length between 8 and 15
@@ -66,6 +70,7 @@ class Computer:
     def randomOfAllChars ():
      all_chars= string.ascii_letters + string.punctuation + string.digits
      return random.choice(all_chars)
+        
     @staticmethod
     #generator generates the whole password and makes sure that it is strong 
     def generator():
