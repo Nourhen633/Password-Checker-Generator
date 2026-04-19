@@ -6,7 +6,7 @@ A Python project that allows users to:
 - Detect weak patterns like repeated characters or sequences (aaa, 123)  
 - Ensure passwords contain uppercase letters, symbols, and digits  
 
-This project is beginner‑friendly and demonstrates:
+This project demonstrates:
 - Python OOP (classes, static methods)
 - Input validation
 - Random password generation
@@ -23,7 +23,8 @@ Evaluates:
 - Repetition patterns  
 - Sequential digits  
 - Uppercase letters  
-- Symbols  
+- Symbols
+- Entropy
 
 Returns:
 - **Weak**
